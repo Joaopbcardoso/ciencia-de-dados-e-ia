@@ -10,14 +10,13 @@ def calcular_maior_nota(notas):
     for nota in notas:
         if nota > maior_nota:
             maior_nota = nota
-    print(maior_nota)
+    return(maior_nota)
 
 def calcular_menor_nota(notas):
     menor_nota = notas[0]
     for nota in notas:
         if nota < menor_nota:
             menor_nota = nota
-    print(menor_nota)
+    return(menor_nota)
 
-calcular_maior_nota(notas)
-calcular_menor_nota(notas)
+print(f'A maior nota é {calcular_maior_nota(notas)} e a maior nota é {calcular_menor_nota(notas)}')
