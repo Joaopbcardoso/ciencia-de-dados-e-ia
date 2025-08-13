@@ -41,6 +41,6 @@ while livro_procurado.lower() != "sair":
         print(f'O livro "{livro_encontrado.titulo}" {atual(livro_encontrado)} e {caro(livro_encontrado, Livros)}')
     else:
         print("Livro não encontrado.")
-    
+
     livro_procurado = input("\nDigite o título do livro (ou 'sair' para encerrar): ")
     
