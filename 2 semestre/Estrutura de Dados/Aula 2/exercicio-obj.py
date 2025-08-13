@@ -43,3 +43,4 @@ while livro_procurado.lower() != "sair":
         print("Livro não encontrado.")
     
     livro_procurado = input("\nDigite o título do livro (ou 'sair' para encerrar): ")
+    
