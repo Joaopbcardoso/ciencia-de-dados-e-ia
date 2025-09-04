@@ -32,25 +32,34 @@ class Carta:
         self.Atk = random.randint(1,6)
         self.Def = random.randint(3,12)
         self.Spd = random.randint(1,10)
-    
+            
     def __str__(self):
         return f"{self.Name} (Atk:{self.Atk}, Def:{self.Def}, Spd:{self.Spd})"
 
 handPlayer1 = []
 handPlayer2 = []
 
-for i in range(5):
-    handPlayer1.append(Carta(pilha1.pop(-1)))
-    handPlayer2.append(Carta(pilha2.pop(-1)))
+# Primeira distribuição: 5 cartas pra cada
+for _ in range(5):
+    handPlayer1.append(Carta(pilha1.pop(0)))
+    handPlayer2.append(Carta(pilha2.pop(0)))
 
 vitorias1 = 0
 vitorias2 = 0
 empates = 0
 
+def repor_carta():
+    if pilha1 and len(handPlayer1) < 5:
+        handPlayer1.append(Carta(pilha1.pop(0)))
+    if pilha2 and len(handPlayer2) < 5:
+        handPlayer2.append(Carta(pilha2.pop(0)))
+
 def combat():
-    vitorias1 = 0
-    vitorias2 = 0
-    empates = 0
+    global vitorias1, vitorias2, empates
+
+    if not handPlayer1 or not handPlayer2:
+        return False 
+
     carta_player1 = handPlayer1.pop(0)
     carta_player2 = handPlayer2.pop(0)
 
@@ -103,8 +112,13 @@ def combat():
 
     print("="*40 + "\n")
 
-for i in range(5):
-    combat()
+    repor_carta()
+
+    return True
+
+while (handPlayer1 or pilha1) and (handPlayer2 or pilha2):
+    if not combat():
+        break
 
 print("\n" + "="*40)
 print(f"Vitórias Jogador 1: {vitorias1}")
