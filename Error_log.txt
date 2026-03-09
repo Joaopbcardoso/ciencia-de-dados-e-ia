@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "c:\Users\jpben\Downloads\ciencia-de-dados-e-ia\3-semestre\Business Inteligence & Data Visualization\Aula 4\scraper.py", line 122, in <module>
+    processa_pagina_noticia(url_base, noticia)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\jpben\Downloads\ciencia-de-dados-e-ia\3-semestre\Business Inteligence & Data Visualization\Aula 4\scraper.py", line 98, in processa_pagina_noticia
+    download_image(noticia.url_imagem, "imagens")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\jpben\Downloads\ciencia-de-dados-e-ia\3-semestre\Business Inteligence & Data Visualization\Aula 4\scraper.py", line 54, in download_image
+    with open(f"{path_prefix}/{nome_imagem}",'wb') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'imagens/54776184128_3bcde06b8f_c-1-960x540.webp'
